@@ -1,3 +1,3 @@
-import main from "./dynamic_behavior";
+import main from "./duck_applicatin/";
 
 main();
