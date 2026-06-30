@@ -1,3 +1,3 @@
 export interface QuackBehavior {
-  quack(): void;
+  quack(): string;
 }

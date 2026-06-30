@@ -1,8 +1,10 @@
 import type { FlyBehavior } from "../FlyBehavior";
 
 export class FlyWithWings implements FlyBehavior {
-  fly(): void {
-    console.log("Fly with wings");
+  fly() {
+    const message = "Fly with wings";
+    console.log(message);
+    return message;
   }
 }
 
