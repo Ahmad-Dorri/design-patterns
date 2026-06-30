@@ -1,13 +1,16 @@
-import { FlyWithWings } from "./behaviors/fly_behavior/flys/FlyWithWings";
+import { FlyNoWay } from "./behaviors/fly_behavior/flys/FlyNoWay";
+import { FlyWithRocket } from "./behaviors/fly_behavior/flys/FlyWithRocket";
 import { Quack } from "./behaviors/quack_behavior/quacks/Quack";
-import MallardDuck from "./ducks/MallardDuck";
+import ModelDuck from "./ducks/ModelDock";
 
 
 function main(): void {
-  const mallard = new MallardDuck(new FlyWithWings(), new Quack());
+  const model = new ModelDuck(new FlyNoWay(), new Quack());
+  console.log(model.performFly());
+  model.setFlyBehavior(new FlyWithRocket());
+  console.log(model.performFly());
 
-  mallard.performFly();
-  mallard.performQuack();
+
 }
 
 export default main;
