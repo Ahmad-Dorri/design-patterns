@@ -1,3 +1,5 @@
-import main from "./duck_applicatin/";
+import duckMain from "./duck_applicatin/";
+import gameMain from "./adventure_game/"
 
-main();
+gameMain();
+
