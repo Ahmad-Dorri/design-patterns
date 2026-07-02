@@ -9,4 +9,4 @@ const main = () => {
   king.useWeapon();
 }
 
-export default main();
+export default main;
