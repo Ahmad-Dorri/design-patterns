@@ -1,4 +1,8 @@
+import type { Screen } from "./screen/screen";
+
 class WeatherData {
+  screens: Screen[] = [];
+
   getTemprature() {
     return 'updated temp';
   }
@@ -14,12 +18,19 @@ class WeatherData {
     const humidity = this.getHumidity();
     const pressure = this.getPressure();
 
-    // @ts-ignore
-    currentConditionDisplay.update(temp, humidity, pressure);
-    // @ts-ignore
-    statisticsDisplay.update(temp, humidity, pressure);
-    // @ts-ignore
-    forecastDisplay.update(temp, humidity, pressure);
+    this.screens.map((screen) => this._updateScreen(screen, temp, humidity, pressure))
+  }
+
+  addScreen(s: Screen) {
+    this.screens.push(s);
+  }
+
+  removeScreen(s: Screen) {
+    this.screens = this.screens.filter((screen) => screen.id !== s.id);
+  }
+
+  _updateScreen(screen: Screen, temp: string, humidity: string, pressure: string) {
+    screen.update(temp, humidity, pressure);
   }
 }
 
