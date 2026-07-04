@@ -1,3 +1,5 @@
-import mainWeather from "./observer_pattern/weather_monitoring/index.ts"
+import { main } from "./decorator_pattern/star_buzz_coffee";
 
-mainWeather();
+main();
+
+
