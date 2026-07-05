@@ -1,4 +1,4 @@
-import type { Pizza } from "./pizza";
+import type { Pizza } from "../pizzas/pizza";
 
 export abstract class PizzaShop {
 
