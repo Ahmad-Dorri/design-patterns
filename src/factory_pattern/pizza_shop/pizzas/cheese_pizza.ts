@@ -1,4 +1,4 @@
-import type { Pizza } from "../pizza";
+import type { Pizza } from "./pizza";
 
 export class CheesePizza implements Pizza {
   prepare(): void {

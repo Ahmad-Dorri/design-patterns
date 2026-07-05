@@ -1,10 +1,11 @@
 import { UnknownException } from "../exceptions/unkown_pizza";
-import type { Pizza } from "../pizza";
-import { CheesePizza } from "./cheese_pizza";
-import { GreekPizza } from "./greek_pizza";
-import { PepperoniPizza } from "./pepperoni_pizza";
+import type { Pizza } from "../pizzas/pizza";
+import { CheesePizza } from "../pizzas/cheese_pizza";
+import { GreekPizza } from "../pizzas/greek_pizza";
+import { PepperoniPizza } from "../pizzas/pepperoni_pizza";
+import type { PizzaFactory } from "./pizza_factory";
 
-export class SimplePizzaFactory {
+export class SimplePizzaFactory implements PizzaFactory {
   createPizza(type: string): Pizza {
     switch (type) {
       case 'cheese':
