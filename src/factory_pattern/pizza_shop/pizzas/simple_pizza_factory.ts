@@ -5,7 +5,7 @@ import { GreekPizza } from "./greek_pizza";
 import { PepperoniPizza } from "./pepperoni_pizza";
 
 export class SimplePizzaFactory {
-  static createPizza(type: string): Pizza {
+  createPizza(type: string): Pizza {
     switch (type) {
       case 'cheese':
         return new CheesePizza();

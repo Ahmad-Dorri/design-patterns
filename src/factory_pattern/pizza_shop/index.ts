@@ -1,9 +1,8 @@
+import { PizzaShop } from "./pizza_shop";
 import { SimplePizzaFactory } from "./pizzas/simple_pizza_factory";
 
 export function main() {
-  const pizza = SimplePizzaFactory.createPizza('pepperoni');
-  pizza.prepare();
-  pizza.bake();
-  pizza.cut();
-  pizza.box();
+  const pizzaFactory = new SimplePizzaFactory();
+  const shop = new PizzaShop(pizzaFactory);
+  shop.orderPizza('cheese');
 }
