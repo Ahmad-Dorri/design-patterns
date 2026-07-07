@@ -1,4 +1,4 @@
-import { NYPizzaFactory } from "../factories/ny_pizza_factory";
+import { NYPizzaFactory } from "./factories/ny_pizza_factory";
 import type { Pizza } from "../pizzas/pizza";
 import { PizzaShop } from "./pizza_store";
 
