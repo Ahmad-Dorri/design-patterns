@@ -1,3 +1,4 @@
+// this is lazy instantiation. If we don't need this class we don't create it.
 export class Singleton {
   static instance?: Singleton;
 
