@@ -3,7 +3,7 @@ import type { QuackBehavior } from "./behaviors/quack_behavior/QuackBehavior";
 
 abstract class Duck {
   private flyBehavior!: FlyBehavior;
-  quackBehavior!: QuackBehavior;
+  private quackBehavior!: QuackBehavior;
 
   swim() {
     console.log("All ducks can swim even the decoys!");
