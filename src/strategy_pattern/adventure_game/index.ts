@@ -1,7 +1,7 @@
 import { Knife } from "./behaviors/weapon_behavior/weapons/knife";
 import { King } from "./characters/king"
 
-const main = () => {
+export const gameStrategyPattern = () => {
   const king = new King();
   king.fight();
   king.useWeapon();
@@ -9,4 +9,3 @@ const main = () => {
   king.useWeapon();
 }
 
-export default main;
