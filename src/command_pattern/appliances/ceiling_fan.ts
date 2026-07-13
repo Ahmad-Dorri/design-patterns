@@ -14,22 +14,26 @@ export class CeilingFan {
 
   public high() {
     this.speed = CeilingFan.HIGH;
-    // code to set the fan to high
+    console.log('set fan to high');
+
   }
 
   public medium() {
     this.speed = CeilingFan.MEDIUM;
-    // code to set the fan to medium
+    console.log('set fan to medium');
+
   }
 
   public low() {
     this.speed = CeilingFan.LOW;
-    // code to set the fan to low
+    console.log('set fan to low');
+
   }
 
   public off() {
     this.speed = CeilingFan.OFF;
-    // code to set the turn off the fan
+    console.log('turn off fan');
+
   }
 
   public getSpeed() {

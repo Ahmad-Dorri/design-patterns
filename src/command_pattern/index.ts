@@ -1,18 +1,23 @@
-import { GarageDoorAdapter } from "./adapter/adapters/garage_door_adapter";
-import { GarageDoorOffCommand } from "./adapter/command/commands/garage_door_off_command";
-import { GarageDoorOnCommand } from "./adapter/command/commands/garage_door_on_command";
+import { CeilingFanHighCommand } from "./adapter/command/commands/ceiling_fan_high_command";
+import { CeilingFanMediumCommand } from "./adapter/command/commands/ceiling_fan_medium_command";
+import { CeilingFanOffCommand } from "./adapter/command/commands/ceiling_fan_off_command";
 import { RemoteControl } from "./adapter/remote_control/remote_control";
-import { GarageDoor } from "./appliances/garage_door";
+import { CeilingFan } from "./appliances/ceiling_fan";
 
 export function commandPattern() {
   const remote = new RemoteControl();
-  const garageDoor = new GarageDoor();
+  const ceilingFan = new CeilingFan('room');
 
-  const garageDoorAdapter = new GarageDoorAdapter(garageDoor);
+  const highCommand = new CeilingFanHighCommand(ceilingFan);
+  const mediumCommand = new CeilingFanMediumCommand(ceilingFan);
+  const offCommand = new CeilingFanOffCommand(ceilingFan);
 
-  remote.setCommand(0, new GarageDoorOnCommand(garageDoorAdapter), new GarageDoorOffCommand(garageDoorAdapter));
+  remote.setCommand(0, highCommand, offCommand);
+  remote.setCommand(1, mediumCommand, offCommand);
 
-
-  remote.onButtonWasPressed(0)
-  remote.offButtonWasPressed(0)
+  remote.onButtonWasPressed(0);
+  remote.undoButtonPressed();
+  remote.onButtonWasPressed(1);
+  remote.offButtonWasPressed(1);
+  remote.undoButtonPressed();
 }
