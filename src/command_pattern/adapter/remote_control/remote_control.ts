@@ -4,6 +4,7 @@ import { NoCommand } from "../command/commands/no_command";
 export class RemoteControl {
   onCommands: Command[] = [];
   offCommands: Command[] = [];
+  history: Command[] = [];
 
   constructor() {
     for (let i = 0; i < 7; i++) {
@@ -19,10 +20,21 @@ export class RemoteControl {
   }
 
   onButtonWasPressed(slot: number) {
-    this.onCommands[slot].execute();
+    const command = this.onCommands[slot];
+    command.execute();
+    this.history.push(command);
   }
 
   offButtonWasPressed(slot: number) {
-    this.offCommands[slot].execute();
+    const command = this.offCommands[slot];
+    command.execute();
+    this.history.push(command);
+  }
+
+
+  undoButtonPressed() {
+    const historySize = this.history.length;
+    const command = this.history.splice(historySize - 1, historySize)[0];
+    command.undo();
   }
 }
