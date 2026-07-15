@@ -1,0 +1,20 @@
+import type { Duck } from "./duck";
+import type { Turkey } from "./turkey";
+
+export class TurkeyAdapter implements Duck {
+  private turkey: Turkey;
+
+  constructor(turkey: Turkey) {
+    this.turkey = turkey;
+  }
+
+  fly(): void {
+    for (let i = 0; i < 5; i++) {
+      this.turkey.fly();
+    }
+  }
+
+  quack(): void {
+    this.turkey.gobble();
+  }
+}
