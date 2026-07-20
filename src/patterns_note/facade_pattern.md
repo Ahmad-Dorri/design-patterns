@@ -1,0 +1,3 @@
+# Definition
+
+Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher level interface that make the subsystem easier to use.
