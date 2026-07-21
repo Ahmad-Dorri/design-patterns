@@ -1,5 +1,4 @@
-import { commandPattern } from "./command_pattern";
+import { templatePattern } from "./template_pattern";
 
-commandPattern();
-
+templatePattern();
 
