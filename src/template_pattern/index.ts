@@ -1,10 +1,7 @@
-import { Coffee } from "./coffee";
-import { Tea } from "./tea";
+import { CoffeeWithHook } from "./caffee_with_hook";
 
 export function templatePattern() {
-  const tea = new Tea();
-  const coffee = new Coffee();
+  const coffee = new CoffeeWithHook();
 
-  tea.prepareRecipe();
   coffee.prepareRecipe();
 }

@@ -8,6 +8,5 @@ export class Coffee extends CaffeineBeverage {
 
   addCondiments() {
     console.log('Adding sugar and milk');
-
   }
 }
