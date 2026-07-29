@@ -1,4 +1,3 @@
-import { templatePattern } from "./template_pattern";
+import { iteratorPattern } from "./iterator_pattern";
 
-templatePattern();
-
+iteratorPattern();
