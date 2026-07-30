@@ -15,5 +15,6 @@ export function iteratorPattern() {
 
   menuItems.map(printMenuItem);
 
+  const hash = { first: 'one', second: 'two' };
 
 }
