@@ -1,3 +1,3 @@
-import { iteratorPattern } from "./iterator_pattern";
+import { compositePattern } from "./composite_pattern";
 
-iteratorPattern();
+compositePattern();
